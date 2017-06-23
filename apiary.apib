@@ -6,125 +6,12 @@ HOST: http://polls.apiblueprint.org/
 Booking est un programme qui permet de réserver des activités selon des créneaux horaires et stocks.
 Une Api RestFULL est disponible pour procéder aux échanges avec le programme booking.
 
-## Liste des jours disponibles pour une ressource
-
-URL : GET /api/rest/v1/resources/23/availabilityunits?perpage=366&page=1&startdate=2016-12-01T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59
+## Liste des ressources [GET] [/api/rest/v1/resources]
 
 + Request (application/json)
 
     + Headers
 
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
-            Authorization: WSSE profile=\"UsernameToken\"
-            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="C0RZXPmUajJIDMvHVg74j5EWGmc=", Created="2017-06-23T16:16:06+02:00", Nonce="NEVWQlhQd3hqR1JQU1dlOVhRb1IyZDVmYVRFPQ=="
-
-
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
-    + Body
-
-            [{"date":"2017-07-06"},{"date":"2017-07-13"},{"date":"2017-07-20"},{"date":"2017-07-27"},{"date":"2017-08-03"},{"date":"2017-08-10"},{"date":"2017-08-17"}]
-
-
-## Liste des disponibilités (avec quotas) pour une ressource
-
-URL : GET /api/rest/v1/resources/23/units?perpage=366&page=1&startdate=2017-06-23T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59
-
-+ Request (application/json)
-
-    + Headers
-
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
-            Authorization: WSSE profile=\"UsernameToken\"
-            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="0i35nSX2bYX6t4YtMuXd6TmFlVc=", Created="2017-06-23T16:22:14+02:00", Nonce="WUZXS2NaVlpRaitLVmdvbmhCb3U1NXcxN1I4PQ=="
-
-
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
-    + Body
-
-            [{"id":65281,"label":"LEVERAMERI","date":"2017-07-06T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:25:36+00:00","updatedAt":"2017-05-30T13:25:36+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65282,"label":"LEVERAMERI","date":"2017-07-13T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65283,"label":"LEVERAMERI","date":"2017-07-20T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65284,"label":"LEVERAMERI","date":"2017-07-27T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65285,"label":"LEVERAMERI","date":"2017-08-03T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65286,"label":"LEVERAMERI","date":"2017-08-10T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65287,"label":"LEVERAMERI","date":"2017-08-17T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"}]
-            
-            
-            # GET /api/rest/v1/units
-
-+ Request (application/json)
-
-    + Headers
-
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
-            Authorization: WSSE profile=\"UsernameToken\"
-            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="RxjdBg24s/HBaar5dE51TJ1Cbv4=", Created="2017-06-23T16:23:08+02:00", Nonce="QnU4WHdoS0NpaU1Ba082VmdaNWIza1RxN0VVPQ=="
-
-
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
-    + Body
-
-            [{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65167,"quotas":[{"id":90875,"number":25,"unit":65167,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65168,"quotas":[{"id":90876,"number":25,"unit":65168,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":3,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65169,"quotas":[{"id":90877,"number":25,"unit":65169,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-28T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:46:14+00:00","updatedAt":"2016-07-26T09:40:15+00:00","dailyBooking":false,"id":65170,"quotas":[{"id":90878,"number":2,"unit":65170,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":2,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-04T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:52:22+00:00","updatedAt":"2016-06-09T15:52:22+00:00","dailyBooking":false,"id":65171,"quotas":[{"id":90879,"number":5,"unit":65171,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":5,"quotaInUsePublic":5,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-11T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:53:29+00:00","updatedAt":"2016-06-09T15:53:29+00:00","dailyBooking":false,"id":65172,"quotas":[{"id":90880,"number":0,"unit":65172,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":0,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-18T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:54:06+00:00","updatedAt":"2016-06-09T15:54:21+00:00","dailyBooking":false,"id":65173,"quotas":[{"id":90881,"number":20,"unit":65173,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":20,"quotaInUsePublic":7,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65174,"quotas":[{"id":90882,"number":25,"unit":65174,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65175,"quotas":[{"id":90883,"number":25,"unit":65175,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65176,"quotas":[{"id":90884,"number":25,"unit":65176,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"}]
-
-## Liste des disponibilités
-
-URL : GET /api/rest/v1/units
-
-+ Request (application/json)
-
-    + Headers
-
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
-            Authorization: WSSE profile=\"UsernameToken\"
-            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="2VfSticQkPZqEivqNrEonwM3CSY=", Created="2017-06-23T16:27:28+02:00", Nonce="Tk9GOThBUnRsM1UzOFA3UlppQmN4WWY2RENJPQ=="
-
-
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
-    + Body
-
-            [{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65167,"quotas":[{"id":90875,"number":25,"unit":65167,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65168,"quotas":[{"id":90876,"number":25,"unit":65168,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":3,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65169,"quotas":[{"id":90877,"number":25,"unit":65169,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-28T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:46:14+00:00","updatedAt":"2016-07-26T09:40:15+00:00","dailyBooking":false,"id":65170,"quotas":[{"id":90878,"number":2,"unit":65170,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":2,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-04T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:52:22+00:00","updatedAt":"2016-06-09T15:52:22+00:00","dailyBooking":false,"id":65171,"quotas":[{"id":90879,"number":5,"unit":65171,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":5,"quotaInUsePublic":5,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-11T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:53:29+00:00","updatedAt":"2016-06-09T15:53:29+00:00","dailyBooking":false,"id":65172,"quotas":[{"id":90880,"number":0,"unit":65172,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":0,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-18T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:54:06+00:00","updatedAt":"2016-06-09T15:54:21+00:00","dailyBooking":false,"id":65173,"quotas":[{"id":90881,"number":20,"unit":65173,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":20,"quotaInUsePublic":7,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65174,"quotas":[{"id":90882,"number":25,"unit":65174,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65175,"quotas":[{"id":90883,"number":25,"unit":65175,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65176,"quotas":[{"id":90884,"number":25,"unit":65176,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"}]
-
-
-
-## Liste des ressources
-
-URL : GET /api/rest/v1/resources
-
-+ Request (application/json)
-
-    + Headers
-
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
             Authorization: WSSE profile=\"UsernameToken\"
             X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="HLzKAWNAGH3f5zyleOvOy22uHBw=", Created="2017-06-23T16:23:31+02:00", Nonce="SllYWGhYc1RLTHBoTG11T0duYzBkdXNidjRRPQ=="
 
@@ -132,21 +19,72 @@ URL : GET /api/rest/v1/resources
 
 + Response 200 (application/json)
 
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
     + Body
 
             [{"label":"LEVER AMERICAIN","ordersCount":0,"delay":null,"cancellation":false,"code":"AMERIC","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":true,"blockedHour":"1970-01-01T12:00:00+00:00","currentUnit":null,"type":"standard","position":1,"createdAt":"2016-06-09T15:33:28+00:00","updatedAt":"2017-05-30T07:26:57+00:00","id":23},{"label":"LEVER CONTINENTAL","ordersCount":0,"delay":null,"cancellation":false,"code":"CONT","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":true,"blockedHour":"1970-01-01T12:00:00+00:00","currentUnit":null,"type":"standard","position":2,"createdAt":"2016-06-09T15:34:21+00:00","updatedAt":"2017-05-30T07:27:15+00:00","id":24},{"label":"PACKAGE BIKE","ordersCount":0,"delay":null,"cancellation":false,"code":"BIKE","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":false,"blockedHour":"1970-01-01T22:59:00+00:00","currentUnit":null,"type":"standard","position":3,"createdAt":"2016-07-08T08:36:31+00:00","updatedAt":"2016-07-08T15:51:16+00:00","id":25},{"label":"Journ\u00e9es sp\u00e9ciales","ordersCount":0,"delay":null,"cancellation":false,"code":"JOURSPE","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":true,"blockedHour":"1970-01-01T14:00:00+00:00","currentUnit":null,"type":"standard","position":5,"createdAt":"2017-05-30T12:45:48+00:00","updatedAt":"2017-05-30T12:45:48+00:00","id":27},{"label":"Yoga","ordersCount":0,"delay":null,"cancellation":false,"code":"YOGA","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":false,"blockedHour":"1970-01-01T14:00:00+00:00","currentUnit":null,"type":"standard","position":4,"createdAt":"2017-05-30T12:45:57+00:00","updatedAt":"2017-05-30T12:54:34+00:00","id":28},{"label":"PACK LODGE","ordersCount":0,"delay":null,"cancellation":false,"code":"LODGE","period":"365","periodPro":"365","state":"opened","blockedCurrentDay":false,"blockedHour":"1970-01-01T22:59:00+00:00","currentUnit":null,"type":"standard","position":1,"createdAt":"2017-06-07T09:00:48+00:00","updatedAt":"2017-06-07T09:00:48+00:00","id":29}]
 
 
-## Création d'une réservation
+## Liste des disponibilités [GET] [/api/rest/v1/units]
 
-URL : POST /api/rest/v1/orders?mode=clean_old_externalref&hl=fr
++ Request (application/json)
+
+    + Headers
+
+            Authorization: WSSE profile=\"UsernameToken\"
+            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="2VfSticQkPZqEivqNrEonwM3CSY=", Created="2017-06-23T16:27:28+02:00", Nonce="Tk9GOThBUnRsM1UzOFA3UlppQmN4WWY2RENJPQ=="
+
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            [{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65167,"quotas":[{"id":90875,"number":25,"unit":65167,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65168,"quotas":[{"id":90876,"number":25,"unit":65168,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":3,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65169,"quotas":[{"id":90877,"number":25,"unit":65169,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-07-28T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:46:14+00:00","updatedAt":"2016-07-26T09:40:15+00:00","dailyBooking":false,"id":65170,"quotas":[{"id":90878,"number":2,"unit":65170,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":2,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-04T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:52:22+00:00","updatedAt":"2016-06-09T15:52:22+00:00","dailyBooking":false,"id":65171,"quotas":[{"id":90879,"number":5,"unit":65171,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":5,"quotaInUsePublic":5,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-11T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:53:29+00:00","updatedAt":"2016-06-09T15:53:29+00:00","dailyBooking":false,"id":65172,"quotas":[{"id":90880,"number":0,"unit":65172,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":0,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER AMERICAIN","position":1,"date":"2016-08-18T05:00:00+00:00","state":"opened","createdAt":"2016-06-09T15:54:06+00:00","updatedAt":"2016-06-09T15:54:21+00:00","dailyBooking":false,"id":65173,"quotas":[{"id":90881,"number":20,"unit":65173,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":23,"label":"LEVER AMERICAIN"},"quotaAvailablePublic":20,"quotaInUsePublic":7,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-07T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:37:29+00:00","updatedAt":"2016-06-09T15:37:29+00:00","dailyBooking":false,"id":65174,"quotas":[{"id":90882,"number":25,"unit":65174,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-14T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:42:51+00:00","updatedAt":"2016-06-09T15:42:51+00:00","dailyBooking":false,"id":65175,"quotas":[{"id":90883,"number":25,"unit":65175,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":2,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"label":"LEVER CONTINENTAL","position":1,"date":"2016-07-21T04:45:00+00:00","state":"opened","createdAt":"2016-06-09T15:45:20+00:00","updatedAt":"2016-06-09T15:45:20+00:00","dailyBooking":false,"id":65176,"quotas":[{"id":90884,"number":25,"unit":65176,"bookerId":19,"bookerType":"public","qtyUnlimited":false}],"resource":{"id":24,"label":"LEVER CONTINENTAL"},"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"isQuotaUnlimitedForPublic":false,"isQuotaUnlimitedForPro":false,"limit_quota_order_public_vel":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"}]
+
+
+## Liste des jours disponibles pour une ressource [GET] [/api/rest/v1/resources/{resource_id}/availabilityunits]
+
+Exemple : /api/rest/v1/resources/23/availabilityunits?perpage=366&page=1&startdate=2016-12-01T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: WSSE profile=\"UsernameToken\"
+            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="C0RZXPmUajJIDMvHVg74j5EWGmc=", Created="2017-06-23T16:16:06+02:00", Nonce="NEVWQlhQd3hqR1JQU1dlOVhRb1IyZDVmYVRFPQ=="
+
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            [{"date":"2017-07-06"},{"date":"2017-07-13"},{"date":"2017-07-20"},{"date":"2017-07-27"},{"date":"2017-08-03"},{"date":"2017-08-10"},{"date":"2017-08-17"}]
+
+## Liste des disponibilités (avec quotas) pour une ressource [GET] [/api/rest/v1/resources/23/units]
+
+Exemple /api/rest/v1/resources/23/units?perpage=366&page=1&startdate=2017-06-23T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: WSSE profile=\"UsernameToken\"
+            X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="0i35nSX2bYX6t4YtMuXd6TmFlVc=", Created="2017-06-23T16:22:14+02:00", Nonce="WUZXS2NaVlpRaitLVmdvbmhCb3U1NXcxN1I4PQ=="
+
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            [{"id":65281,"label":"LEVERAMERI","date":"2017-07-06T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:25:36+00:00","updatedAt":"2017-05-30T13:25:36+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65282,"label":"LEVERAMERI","date":"2017-07-13T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65283,"label":"LEVERAMERI","date":"2017-07-20T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65284,"label":"LEVERAMERI","date":"2017-07-27T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65285,"label":"LEVERAMERI","date":"2017-08-03T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65286,"label":"LEVERAMERI","date":"2017-08-10T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"},{"id":65287,"label":"LEVERAMERI","date":"2017-08-17T17:00:00+00:00","position":1,"createdAt":"2017-05-30T13:26:05+00:00","updatedAt":"2017-05-30T13:26:05+00:00","dailyBooking":false,"quotaAvailablePublic":25,"quotaInUsePublic":0,"quotaAvailableCommercial":0,"quotaInUseCommercial":0,"quotaAvailablePro":0,"quotaInUsePro":0,"quotaUnlimitedForPublic":false,"quotaUnlimitedForPro":false,"quotaUnlimitedForCommercial":false,"limitQuotaOrderPublicVel":"99","limitQuotaOrderBackOffice":"99"}]
+            
+            
+            
+## Création d'une réservation [POST] [/api/rest/v1/orders]
+
+Exemple : POST /api/rest/v1/orders?mode=clean_old_externalref&hl=fr
 
 + Request (application/json)
 
@@ -190,21 +128,14 @@ URL : POST /api/rest/v1/orders?mode=clean_old_externalref&hl=fr
 
 + Response 201 (application/json)
 
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
-
     + Body
 
             {"bookingReference":"AMERIC-0713-1700-1-44195","externalReference":"ExternalId","bookingType":"Public","orderState":"cart","totalPrice":6000,"count":2,"bookerLastname":"Menu","bookerFirstname":"Ludovic","bookerMail":"ludovic.menu@eliberty.fr","bookerLocale":"fr_FR","bookerPhone":"0610101010","origin":"vel","createdAt":"2017-06-23T14:23:53+00:00","updatedAt":"2017-06-23T14:23:53+00:00","id":44195,"orderItems":[{"id":236305,"lastname":"MENU","firstname":"Ludovic","personType":"UNK"},{"id":236306,"lastname":"Collin","firstname":"Beno\u00eet","personType":"UNK"}],"unit":{"id":65282,"label":"LEVERAMERI","date":"2017-07-13T17:00:00+00:00"},"user":{"id":77,"lastname":"Verbier","firstname":"API"},"organization":"VERBIER","businessUnit":"Grand public","owner":"Grand public"}
 
 
-## Modification d'une réservation
+## Modification d'une réservation [PUT] [/api/rest/v1/orders/{order_id}]
 
-urL : PUT /api/rest/v1/orders/44194
+Exemple : PUT /api/rest/v1/orders/44194
 
 + Request (application/json)
 
@@ -248,36 +179,21 @@ urL : PUT /api/rest/v1/orders/44194
 
 + Response 204 (text/html; charset=UTF-8)
 
-    + Headers
 
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
+## Obtenir les informations d'une réservation [GET] [/api/rest/v1/orders/{order_id}]
 
-
-
-## Obtenir les infos d'une réservations
-
-URL : GET /api/rest/v1/orders/44194
+Exemple : GET /api/rest/v1/orders/44194
 
 + Request (application/json)
 
     + Headers
 
-            Cookie: BAPID=8kgq8c12fieohb3hajoe1b9lin
             Authorization: WSSE profile=\"UsernameToken\"
             X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="uM+9ku6cHGJ+lTnyjP1mRAneSIg=", Created="2017-06-23T16:24:43+02:00", Nonce="M1I3eGZPSHlud0g4MU12TnNuYzV1aGNXaUtRPQ=="
 
 
 
 + Response 200 (application/json)
-
-    + Headers
-
-            Transfer-Encoding: chunked
-            X-Backend-Server: front1.elib.loc
-            X-Robots-Tag: noindex, nofollow
-            Cache-Control: no-cache
 
     + Body
 

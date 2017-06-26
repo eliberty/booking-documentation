@@ -1,5 +1,5 @@
 FORMAT: X-1A
-HOST: https://api.eliberty.fr/
+HOST: https://verbier.booking.e-liberty.fr
 
 # Booking
 
@@ -50,18 +50,50 @@ Un "unit" correspond à une disponinibilité à un instant T.
             X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="2VfSticQkPZqEivqNrEonwM3CSY=", Created="2017-06-23T16:27:28+02:00", Nonce="Tk9GOThBUnRsM1UzOFA3UlppQmN4WWY2RENJPQ=="
 
 + Response 200
-    [Resources][]
+    [Units][]
 
 + Response 401
 
         Unauthorized
 
-            
 
+## Availabilityunits [/api/rest/v1/resources/{resource_id}/availabilityunits{?perpage,page,startdate,ebddate}]
 
-## Liste des jours disponibles pour une ressource [GET] [/api/rest/v1/resources/{resource_id}/availabilityunits]
++ Parameters
+    + page = `1` (optional, number) ... Page number for results iteration.
+    + perpage = `365` (optional, number) ... Number of results per page
+    + startdate = `2016-12-01` (optional, datetime) ... Start date
+    + enddate = `2017-10-01` (optional, datetime) ... End date
+    
++ Model (application/json)
 
-Exemple : /api/rest/v1/resources/23/availabilityunits?perpage=366&page=1&startdate=2016-12-01T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59
+    ```js
+    [
+  {
+    "date": "2017-07-06"
+  },
+  {
+    "date": "2017-07-13"
+  },
+  {
+    "date": "2017-07-20"
+  },
+  {
+    "date": "2017-07-27"
+  },
+  {
+    "date": "2017-08-03"
+  },
+  {
+    "date": "2017-08-10"
+  },
+  {
+    "date": "2017-08-17"
+  }
+]
+    ```      
+    
+### Liste des jours disponibles [GET]
 
 + Request (application/json)
 
@@ -71,13 +103,13 @@ Exemple : /api/rest/v1/resources/23/availabilityunits?perpage=366&page=1&startda
             X-WSSE: UsernameToken Username="apib4f@eliberty.fr", PasswordDigest="C0RZXPmUajJIDMvHVg74j5EWGmc=", Created="2017-06-23T16:16:06+02:00", Nonce="NEVWQlhQd3hqR1JQU1dlOVhRb1IyZDVmYVRFPQ=="
 
 
++ Response 200
+    [Availabilityunits][]
 
-+ Response 200 (application/json)
++ Response 401
 
-    + Body
-
-            [{"date":"2017-07-06"},{"date":"2017-07-13"},{"date":"2017-07-20"},{"date":"2017-07-27"},{"date":"2017-08-03"},{"date":"2017-08-10"},{"date":"2017-08-17"}]
-
+        Unauthorized
+        
 ## Liste des disponibilités (avec quotas) pour une ressource [GET] [/api/rest/v1/resources/23/units]
 
 Exemple /api/rest/v1/resources/23/units?perpage=366&page=1&startdate=2017-06-23T00%3A00%3A00&enddate=2017-12-22T23%3A59%3A59

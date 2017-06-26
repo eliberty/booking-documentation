@@ -17,11 +17,12 @@ https://github.com/8p/guzzle-wsse-middleware
 
 ## Resources [/api/rest/v1/resources]
 Une ressource est un produit booking réprésentant une activité.
-blockedCurrentDay : indique sur la réservation est autorisé pour le jour même
-state : indique si le produit est ouvert ou fermé
-period : indique le nombre de jour autorisant la réservation avant la date du unit.
-type : standard ou with_cart, si le type est with_cart, il faut obligatoirement passer dans la réservation le numéro de badge du skieur.
-blockedHour : indique l'heure de réservation maximum d'une disponibilité.
+
+- *blockedCurrentDay* : indique si la réservation est autorisée pour le jour même.
+- *state* : indique si le produit est ouvert ou fermé
+- *period* : indique le nombre de jour autorisant la réservation avant la date de disponbilité (unit).
+- *type* (standard|with_cart) : si le type est with_cart, il faut obligatoirement indiqué dans la réservation le numéro de badge du skieur.
+- *blockedHour* : indique l'heure de réservation maximal d'une disponibilité.
 
 + Model (application/json)
 
@@ -155,12 +156,12 @@ blockedHour : indique l'heure de réservation maximum d'une disponibilité.
 
 ## Units [/api/rest/v1/units]
 
-Un "unit" correspond à une disponibilité à un instant T.
-Un nombre de stock est alors alloué à cette dispobilité.
-Le type "Public" correspond au stock alloué sur la vente en ligne.
-dailyBooking indique si la réservation est à la journée ou non.
-qtyUnlimited indique si le unit a un stock illimité ou non.
-Le quota restant est la soustraction de quotaAvailablePublic - quotaInUsePublic
+- Un "unit" correspond à une disponibilité à un instant T.
+- Un nombre de stock est alors alloué à cette disponibilité.
+- Le type "Public" correspond au stock alloué sur la vente en ligne.
+- *dailyBooking* : indique si la réservation est à la journée ou non.
+- *qtyUnlimited* : indique si le unit a un stock illimité ou non.
+- Le quota restant est la soustraction de *quotaAvailablePublic* - *quotaInUsePublic*
 
 + Model (application/json)
 
@@ -536,10 +537,10 @@ Le quota restant est la soustraction de quotaAvailablePublic - quotaInUsePublic
         Unauthorized
 
 
-## Availabilityunits [/api/rest/v1/resources/{resource_id}/availabilityunits{?perpage,page,startdate,ebddate}]
+## AvailabilityUnits [/api/rest/v1/resources/{resource_id}/availabilityunits{?perpage,page,startdate,ebddate}]
 
-Ce endPoint permet de retourner la liste des jours disponible pour une ressource. 
-Il permet par exemple de constuire un calendrier pour un produit.
+Ce endPoint permet de retourner la liste des jours disponibles pour une ressource. 
+Il permet par exemple de construire un calendrier pour un produit.
 
 + Parameters
     + page = `1` (optional, number) ... Page number for results iteration.
@@ -587,7 +588,7 @@ Il permet par exemple de constuire un calendrier pour un produit.
 
 
 + Response 200
-    [Availabilityunits][]
+    [AvailabilityUnits][]
 
 + Response 401
 
@@ -595,7 +596,7 @@ Il permet par exemple de constuire un calendrier pour un produit.
         
 ## UnitsByResources [/api/rest/v1/resources/{resource_id}/units]
 
-Ce endPoint permet de récupérer la liste de toutes les disponibilités ainsi que les stocks alloué à une ressource.
+Ce endPoint permet de récupérer la liste de toutes les disponibilités ainsi que les stocks alloués à une ressource.
 
 + Parameters
     + page = `1` (optional, number) ... Page number for results iteration.
@@ -629,14 +630,13 @@ Ce endPoint permet de récupérer la liste de toutes les disponibilités ainsi q
             
 ## Orders [/api/rest/v1/orders]
 
-Un order est une réservation dans booking. 
-Une commande peut avoir 4 status : 
-- init : préreservé. (Stock bloqué pendant Xminutes) -> un cron s'occupe de passer les réservation en status cancelled au delà.
+Un order est une réservation qui peut avoir 4 statuts différents : 
+- init : préreservée. (Stock bloqué pendant X minutes) -> un cron s'occupe de changer les réservations en statut cancelled au delà.
 - cart : panier
-- completed : payé
-- cancelled : annulé
+- completed : payée
+- cancelled : annulée
 
-bookerLastname, bookerFirstname, bookerLocale, bookerMail, bookerPhone permet de décrire les informations de la personne qui a fait la réservation.
+bookerLastname, bookerFirstname, bookerLocale, bookerMail, bookerPhone permettent de décrire les informations de la personne qui a fait la réservation.
 
 ### Créér une réservation [POST]
 

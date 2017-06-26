@@ -3,12 +3,12 @@ HOST: https://verbier.booking.e-liberty.fr
 
 # Booking
 
-Booking est un programme qui permet de réserver des activités selon des créneaux horaires et stocks.
+Booking est un programme de réservation d'activité selon des créneaux horaires et stocks.
 Une Api RestFULL est disponible pour procéder aux échanges avec le programme booking.
 
 # Sécurité
 
-L'api booking est protégé par une authentification de type WSSE.
+L'api booking est protégé par une authentification WSSE.
 
 Vous pouvez trouver une explication sur le fonctionnement de WSSE au lien suivant : https://marketing.adobe.com/developer/fr/documentation/authentication-1/wsse-authentication-2
 
@@ -546,7 +546,7 @@ Il permet par exemple de constuire un calendrier pour un produit.
     + perpage = `365` (optional, number) ... Number of results per page
     + startdate = `2016-12-01` (optional, datetime) ... Start date
     + enddate = `2017-10-01` (optional, datetime) ... End date
-    + resource_id = `23`(number) Resource ID
+    + resource_id (number) Resource ID
     
 + Model (application/json)
 
@@ -595,14 +595,14 @@ Il permet par exemple de constuire un calendrier pour un produit.
         
 ## UnitsByResources [/api/rest/v1/resources/{resource_id}/units]
 
-Ce endPoint permet de récupérer toutes les disponibilités ainsi que les stock alloué à une ressource.
+Ce endPoint permet de récupérer la liste de toutes les disponibilités ainsi que les stocks alloué à une ressource.
 
 + Parameters
     + page = `1` (optional, number) ... Page number for results iteration.
     + perpage = `365` (optional, number) ... Number of results per page
     + startdate = `2016-12-01` (optional, datetime) ... Start date
     + enddate = `2017-10-01` (optional, datetime) ... End date
-    + resource_id = `23`(number) Resource ID
+    + resource_id (number) Resource ID
     
 + Model (application/json)
 

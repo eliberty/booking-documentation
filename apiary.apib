@@ -16,7 +16,12 @@ En php il est possible d'utiliser la librairie Guzzle avec l'extension suivante 
 https://github.com/8p/guzzle-wsse-middleware
 
 ## Resources [/api/rest/v1/resources]
-Liste des ressources. Une ressource est un produit booking réprésentant une activité.
+Une ressource est un produit booking réprésentant une activité.
+blockedCurrentDay : indique sur la réservation est autorisé pour le jour même
+state : indique si le produit est ouvert ou fermé
+period : indique le nombre de jour autorisant la réservation avant la date du unit.
+type : standard ou with_cart, si le type est with_cart, il faut obligatoirement passer dans la réservation le numéro de badge du skieur.
+blockedHour : indique l'heure de réservation maximum d'une disponibilité.
 
 + Model (application/json)
 
@@ -533,6 +538,9 @@ Le quota restant est la soustraction de quotaAvailablePublic - quotaInUsePublic
 
 ## Availabilityunits [/api/rest/v1/resources/{resource_id}/availabilityunits{?perpage,page,startdate,ebddate}]
 
+Ce endPoint permet de retourner la liste des jours disponible pour une ressource. 
+Il permet par exemple de constuire un calendrier pour un produit.
+
 + Parameters
     + page = `1` (optional, number) ... Page number for results iteration.
     + perpage = `365` (optional, number) ... Number of results per page
@@ -587,6 +595,8 @@ Le quota restant est la soustraction de quotaAvailablePublic - quotaInUsePublic
         
 ## UnitsByResources [/api/rest/v1/resources/{resource_id}/units]
 
+Ce endPoint permet de récupérer toutes les disponibilités ainsi que les stock alloué à une ressource.
+
 + Parameters
     + page = `1` (optional, number) ... Page number for results iteration.
     + perpage = `365` (optional, number) ... Number of results per page
@@ -618,6 +628,15 @@ Le quota restant est la soustraction de quotaAvailablePublic - quotaInUsePublic
         Unauthorized
             
 ## Orders [/api/rest/v1/orders]
+
+Un order est une réservation dans booking. 
+Une commande peut avoir 4 status : 
+- init : préreservé. (Stock bloqué pendant Xminutes) -> un cron s'occupe de passer les réservation en status cancelled au delà.
+- cart : panier
+- completed : payé
+- cancelled : annulé
+
+bookerLastname, bookerFirstname, bookerLocale, bookerMail, bookerPhone permet de décrire les informations de la personne qui a fait la réservation.
 
 ### Créér une réservation [POST]
 
